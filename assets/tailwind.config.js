@@ -1,5 +1,5 @@
 module.exports = {
-  mode: 'jit',
+  
   theme: {
     fontFamily: {
       sans: [
@@ -172,8 +172,20 @@ module.exports = {
   variants: {
     //backgroundColor: ["responsive", "hover", "focus", "active"]
   },
-  plugins: [],
-  purge: [
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/forms'),
+    require('daisyui')
+  ],
+  daisyui: {
+    styled: true,
+    themes: true,
+    base: false,
+    utils: true,
+    logs: true,
+    rtl: false,
+  },
+  content: [
     '../lib/**/*.ex',
     '../lib/**/*.leex',
     '../lib/**/*.heex',

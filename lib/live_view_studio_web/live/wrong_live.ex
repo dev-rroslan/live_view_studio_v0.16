@@ -15,15 +15,15 @@ defmodule LiveViewStudioWeb.WrongLive do
   def render(assigns) do
     ~H"""
 
-    <h1>Your score: <%= @score %></h1>
-    <h1>
+    <h1>Your score: <span class="text-red-800"><%= @score %></span></h1>
+    <h2 class="text-center text-4xl font-semibold mb-8 text-indigo-700">
     <%= @message %>
-    </h1>
-    <h1>
+    </h2>
+    <h2 class="text-center italic hover:not-italic text-2xl mb-8">
     <%= for n <- 1..10 do %>
     <a href="#" phx-click = "guess" phx-value-number = {n}><%= n %></a>
     <% end %>
-    </h1>
+    </h2>
     """
   end
 
